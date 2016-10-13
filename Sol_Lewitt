@@ -1,0 +1,69 @@
+function setup() {
+	createCanvas(600,600);
+		background(255);
+	stroke(0);
+	strokeWeight(15);
+	fill(255);
+	//border
+	rect(45, 50, 500, 500);
+	fill(255);
+	strokeWeight(5);
+	//square in the back
+	line(200, 130.5, 450, 130.5);
+	line(450, 130.5, 450, 380.5);
+	
+	//make square invisible
+	//rect(200, 130.5, 2, 250);
+	
+	//square in the front
+	rect(80, 270, 250, 250);
+	line(79.5, 270, 200, 130);
+	line(450, 130.5, 331, 270);
+	line(450.5, 380.5, 331, 520);
+}
+
+//horizontal line loop
+ function draw(){
+  for(var i = 0; i < 15; i++) {
+  	line(80, i*17+270, 330, i*17+270);
+	}
+
+
+  	line(330, 200, 330, 400);
+	line(350, 200, 350, 495);
+	line(370, 300, 370, 473);
+	line(390, 300, 390, 448);
+	line(410, 180, 410, 424);
+	line(430, 157, 430, 401);
+
+//diagonal line loop (on top)
+  for(var a = 0; a < 12; a++) {
+  	line(a*21+79.5, 270, a*21+200, 130);
+	}
+
+	stroke(1);
+	fill(255);
+	rect(285, 200, 102, 100);
+	quad(285, 205, 230, 265, 230, 352, 285, 300);
+	quad(285, 300, 230, 355, 330, 355, 385, 300);
+//horizontal line loop (small)
+  for(var i = 0; i < 10; i++) {
+  	line(285, i*10+200, 387, i*10+200);
+}
+//diagonal line loop (small - on side)
+	line(237, 255, 237, 341);
+	line(247, 245, 247, 337);
+	line(257, 235, 257, 326);
+	line(267, 225, 267, 316);
+	line(277, 215, 277, 306);
+//diagonal line loop (small - on bottom)
+	line(245, 352, 297, 300);
+	line(258, 352, 310, 300);
+	line(271, 352, 323, 300);
+	line(284, 352, 336, 300);
+	line(297, 352, 349, 300);
+	line(310, 352, 362, 300);
+	line(323, 352, 375, 300);
+
+
+}
