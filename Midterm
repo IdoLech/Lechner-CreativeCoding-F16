@@ -1,0 +1,104 @@
+var keyUp;
+var keyDown;
+var keyLeft;
+var keyRight;
+var posX;
+var posY;
+var drawSpeed;
+var drawSize;
+
+function setup() {
+createCanvas(570,405);
+keyUp = false;
+keyDown = false;
+keyLeft = false;
+keyRight = false;
+posX = width/2;
+posY = height/2;
+drawSpeed = 1;
+drawSize = 5;
+}
+
+
+function draw() {
+		// fill(255,0,0);
+		// strokeWeight(0);
+		// // rect(100, 200, 25, 400);
+		// // rect(600, 200, 25, 400);
+		// // rect(100, 575, 500, 25);
+		// // rect(100, 200, 500, 25);
+		
+// if (mouseX > 110 && mouseX < 600 && mouseY > 210 && mouseY < 590){
+	fill(0);
+// 	rect(mouseX, mouseY, 5, 5);
+// 	}
+
+
+	if (keyUp == true) {
+		posY -= drawSpeed;
+		rect(posX, posY, drawSize, drawSize);
+	}
+
+	if (keyDown == true) {
+		posY += drawSpeed;
+		rect(posX, posY, drawSize, drawSize);
+	}
+
+	if (keyRight == true) {
+			posX += drawSpeed;
+		rect(posX, posY, drawSize, drawSize);
+
+	}
+
+	if (keyLeft == true) {
+			posX -= drawSpeed;
+			constrain(posX, 110, 600);
+		rect(posX, posY, drawSize, drawSize);
+	}
+
+if (mouseIsPressed) {
+	fill(255);
+	rect(0, 0, 675, 450);
+}
+	// fill(255);
+	// strokeWeight(1);
+	// ellipse(180,578,90,90);
+	// ellipse(545,578,90,90);
+}
+
+function keyPressed() {
+	if (keyCode == RIGHT_ARROW) {
+		keyRight = true;
+	}
+
+	if (keyCode == LEFT_ARROW) {
+		keyLeft = true;
+	}
+
+	if (keyCode == UP_ARROW) {
+		keyUp = true;
+	}
+
+	if (keyCode == DOWN_ARROW) {
+		keyDown = true;
+	}
+}
+
+function keyReleased() {
+	if (keyCode == RIGHT_ARROW) {
+		keyRight = false;
+	}
+
+	if (keyCode == LEFT_ARROW) {
+		keyLeft = false;
+	}
+
+	if (keyCode == UP_ARROW) {
+		keyUp = false;
+	}
+
+	if (keyCode == DOWN_ARROW) {
+		keyDown = false;
+	}
+}
+
